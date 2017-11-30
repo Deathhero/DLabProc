@@ -11,6 +11,8 @@ void Clear(container* &cont);
 int In(container* &cont, ifstream &inFile);
 void Out(container* &cont, ofstream &outFile);
 void Sort(container* &cont, int len);
+void OutOnlyBus(container* &cont, ofstream &outFile);
+void OutOnlyTruck(container* &cont, ofstream &outFile);
 
 int main(int argc, char* argv[]) {
 
@@ -31,6 +33,7 @@ int main(int argc, char* argv[]) {
 	ofst << "Filled container. " << endl;
 	Sort(c, len);
 	Out(c, ofst);
+
 
 	Clear(c);
 	ofst << "Empty container. " << endl;
