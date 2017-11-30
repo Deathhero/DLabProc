@@ -9,4 +9,5 @@ using namespace std;
 void OutTruck(truck* &t, ofstream &ofst) {
 	ofst << "It is Truck." << endl;
 	ofst << "Engine power = " << t->enginepower << ". Carrying capacity =  " << t->carryingcapacity << endl;
+	ofst << "Fuel consumption = " << t->fuelconsumption << endl;
 }

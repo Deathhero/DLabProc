@@ -10,6 +10,7 @@ struct truck {
 	key k;
 	int enginepower;
 	int carryingcapacity;
+	float fuelconsumption;
 };
 
 //void InTruck(truck* &t, ifstream &ifst);

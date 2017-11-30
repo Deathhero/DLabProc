@@ -8,5 +8,6 @@ using namespace std;
 
 void InTruck(truck* &t, ifstream &ifst) {
 	ifst >> t->enginepower;
+	ifst >> t->fuelconsumption;
 	ifst >> t->carryingcapacity;
 }
