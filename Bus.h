@@ -5,13 +5,11 @@
 
 using namespace std;
 
-struct bus {
+struct bus 
+{
 	enum key { TRUCK, BUS, PASSENGERCAR };
 	key k;
 	int enginepower;
 	short int passengercapacity;
 	float fuelconsumption;
 };
-
-//void InBus(bus* &b, ifstream &ifst);
-//void OutBus(bus* &b, ofstream &ofst);

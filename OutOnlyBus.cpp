@@ -28,7 +28,8 @@ void OutOnlyBus(container* &cont, ofstream &outFile)
 	}
 	while (p != NULL)
 	{
-		if (p->cont->k == car::key::BUS) {
+		if (p->cont->k == car::key::BUS) 
+		{
 			outFile << p->len << ": ";
 			Out(p->cont, outFile);
 			outFile << "Ñargo weight / Engine power = " << FuncCar(p->cont) << endl;

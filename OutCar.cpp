@@ -12,12 +12,14 @@ void OutPassengercar(passengercar* &p, ofstream &ofst);
 
 void CheckOutputFile(ostream &ofst);
 
-void Out(car *c, ofstream &ofst) {
+void Out(car *c, ofstream &ofst) 
+{
 	CheckOutputFile(ofst);
 	truck *t;
 	bus *b;
 	passengercar *p;
-	switch (c->k) {
+	switch (c->k) 
+	{
 	case car::key::TRUCK:
 		t = (truck*)c;
 		OutTruck(t, ofst);

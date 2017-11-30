@@ -5,12 +5,9 @@
 
 using namespace std;
 
-struct car {
+struct car 
+{
 	enum key { TRUCK, BUS, PASSENGERCAR };
-	// значения ключей для каждого вида животных
 	key k; // ключ
 		   // используемые альтернативы
 };
-
-//car* In(ifstream &ifst);
-//void Out(car *a, ofstream &ofst);

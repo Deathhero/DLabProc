@@ -13,11 +13,13 @@ float FuncTruck(truck* &t);
 float FuncBus(bus* &b);
 float FuncPassengerCar(passengercar* &p);
 
-float FuncCar(car* &c) {
+float FuncCar(car* &c) 
+{
 	truck *t;
 	passengercar *p;
 	bus *b;
-	switch (c->k) {
+	switch (c->k) 
+	{
 	case car::key::BUS:
 		b = (bus*)c;
 		return FuncBus(b);

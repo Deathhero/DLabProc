@@ -14,14 +14,16 @@ car* In(ifstream &ifst);
 int In(container* &cont, ifstream &ifst)
 {
 	CheckInputFile(ifst);
-	if (ifst.eof()) {
+	if (ifst.eof()) 
+	{
 		cerr << "Empty File!" << endl;
 		exit(1);
 	}
 	int len = 0;
 	ifst >> len;
 	CheckWrongInput(ifst);
-	if (len < 0) {
+	if (len < 0) 
+	{
 		cerr << "Incorrect len of container!" << endl;
 		exit(1);
 	}

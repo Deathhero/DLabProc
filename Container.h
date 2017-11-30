@@ -14,8 +14,3 @@ struct container
 	struct container *next;
 	struct container *prev;
 };
-
-//struct container *Init();
-//void Clear(container* &cont);
-//int In(container* &cont, ifstream &inFile);
-//void Out(container* &cont, ofstream &outFile);

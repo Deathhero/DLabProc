@@ -5,7 +5,8 @@
 
 using namespace std;
 
-struct passengercar {
+struct passengercar 
+{
 	enum key { TRUCK, BUS, PASSENGERCAR };
 	key k;
 	int enginepower;

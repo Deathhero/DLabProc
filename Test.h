@@ -3,7 +3,6 @@
 #include "Bus.h"
 #include "Truck.h"
 #include "PassengerCar.h"
-//#include "Car.h"
 #include "FilesCmp.h"
 
 using namespace std;
@@ -15,7 +14,8 @@ void OutBus(bus* &b, ofstream &ofst);
 class BusTest : public ::testing::Test {
 };
 
-TEST_F(BusTest, CheckFuncBusDivisionByZero) {
+TEST_F(BusTest, CheckFuncBusDivisionByZero) 
+{
 	bus *b = new bus;
 	b->enginepower = 0;
 	b->passengercapacity = 1;
@@ -23,7 +23,8 @@ TEST_F(BusTest, CheckFuncBusDivisionByZero) {
 	ASSERT_NEAR(expected, FuncBus(b), 0.01);
 }
 
-TEST_F(BusTest, CheckFuncBus) {
+TEST_F(BusTest, CheckFuncBus) 
+{
 	bus *b = new bus;
 	b->enginepower = 4;
 	b->passengercapacity = 2;
@@ -32,7 +33,8 @@ TEST_F(BusTest, CheckFuncBus) {
 }
 
 
-TEST_F(BusTest, CheckInput) {
+TEST_F(BusTest, CheckInput) 
+{
 	ifstream ifst("InBus.txt");
 	bus* actual = new bus;
 	InBus(actual, ifst);
@@ -45,7 +47,8 @@ TEST_F(BusTest, CheckInput) {
 	ASSERT_EQ(actual->passengercapacity, b.passengercapacity);
 }
 
-TEST_F(BusTest, CheckOutput) {
+TEST_F(BusTest, CheckOutput) 
+{
 	ofstream ofst("OutTest.txt");
 	bus *b = new bus;
 	b->enginepower = 1;
@@ -71,7 +74,8 @@ void OutTruck(truck* &t, ofstream &ofst);
 class TruckTest : public ::testing::Test {
 };
 
-TEST_F(TruckTest, CheckFuncTruckDivisionByZero) {
+TEST_F(TruckTest, CheckFuncTruckDivisionByZero) 
+{
 	truck *t = new truck;
 	t->enginepower = 0;
 	t->carryingcapacity = 1;
@@ -79,7 +83,8 @@ TEST_F(TruckTest, CheckFuncTruckDivisionByZero) {
 	ASSERT_NEAR(expected, FuncTruck(t), 0.01);
 }
 
-TEST_F(TruckTest, CheckFuncTruck) {
+TEST_F(TruckTest, CheckFuncTruck)
+{
 	truck *t = new truck;
 	t->enginepower = 2;
 	t->carryingcapacity = 3;
@@ -87,7 +92,8 @@ TEST_F(TruckTest, CheckFuncTruck) {
 	ASSERT_NEAR(expected, FuncTruck(t), 0.01);
 }
 
-TEST_F(TruckTest, CheckInput) {
+TEST_F(TruckTest, CheckInput)
+{
 	ifstream ifst("InTruck.txt");
 	truck* actual = new truck;
 	InTruck(actual, ifst);
@@ -100,7 +106,8 @@ TEST_F(TruckTest, CheckInput) {
 	ASSERT_EQ(actual->carryingcapacity, t.carryingcapacity);
 }
 
-TEST_F(TruckTest, CheckOutput) {
+TEST_F(TruckTest, CheckOutput)
+{
 	ofstream ofst("OutTest.txt");
 	truck *t = new truck;
 	t->enginepower = 1;
@@ -124,7 +131,8 @@ void OutPassengercar(passengercar* &p, ofstream &ofst);
 class PassengerCarTest : public ::testing::Test {
 };
 
-TEST_F(PassengerCarTest, CheckFuncPassengerCarDivisionByZero) {
+TEST_F(PassengerCarTest, CheckFuncPassengerCarDivisionByZero)
+{
 	passengercar *p = new passengercar;
 	p->enginepower = 0;
 	p->maxspeed = 1;
@@ -132,7 +140,8 @@ TEST_F(PassengerCarTest, CheckFuncPassengerCarDivisionByZero) {
 	ASSERT_NEAR(expected, FuncPassengerCar(p), 0.01);
 }
 
-TEST_F(PassengerCarTest, CheckFuncPassengerCar) {
+TEST_F(PassengerCarTest, CheckFuncPassengerCar) 
+{
 	passengercar *p = new passengercar;
 	p->enginepower = 2;
 	p->maxspeed = 3;
@@ -140,7 +149,8 @@ TEST_F(PassengerCarTest, CheckFuncPassengerCar) {
 	ASSERT_NEAR(expected, FuncPassengerCar(p), 0.01);
 }
 
-TEST_F(PassengerCarTest, CheckInput) {
+TEST_F(PassengerCarTest, CheckInput)
+{
 	ifstream ifst("InPassengerCar.txt");
 	passengercar* actual = new passengercar;
 	InPassengercar(actual, ifst);
@@ -153,7 +163,8 @@ TEST_F(PassengerCarTest, CheckInput) {
 	ASSERT_EQ(actual->maxspeed, p.maxspeed);
 }
 
-TEST_F(PassengerCarTest, CheckOutput) {
+TEST_F(PassengerCarTest, CheckOutput) 
+{
 	ofstream ofst("OutTest.txt");
 	passengercar *p = new passengercar;
 	p->enginepower = 1;
@@ -178,7 +189,8 @@ bool Compare(car *c1, car *c2);
 class CarTest : public ::testing::Test {
 };
 
-TEST_F(CarTest, CheckInputBus) {
+TEST_F(CarTest, CheckInputBus) 
+{
 	ifstream ifst("CarInBus.txt");
 	bus* actual = (bus *)In(ifst);
 
@@ -194,7 +206,8 @@ TEST_F(CarTest, CheckInputBus) {
 	ASSERT_EQ(actual->passengercapacity, expected->passengercapacity);
 }
 
-TEST_F(CarTest, CheckInputTruck) {
+TEST_F(CarTest, CheckInputTruck) 
+{
 	ifstream ifst("CarInTruck.txt");
 	truck* actual = (truck *)In(ifst);
 
@@ -210,7 +223,8 @@ TEST_F(CarTest, CheckInputTruck) {
 	ASSERT_EQ(actual->carryingcapacity, expected->carryingcapacity);
 }
 
-TEST_F(CarTest, CheckInputPassengerCar) {
+TEST_F(CarTest, CheckInputPassengerCar) 
+{
 	ifstream ifst("CarInPassengerCar.txt");
 	passengercar* actual = (passengercar *)In(ifst);
 
@@ -226,7 +240,8 @@ TEST_F(CarTest, CheckInputPassengerCar) {
 	ASSERT_EQ(actual->maxspeed, expected->maxspeed);
 }
 
-TEST_F(CarTest, CheckOutputBus) {
+TEST_F(CarTest, CheckOutputBus) 
+{
 	ofstream ofst("OutTest.txt");
 
 	bus* b = new bus;
@@ -244,7 +259,8 @@ TEST_F(CarTest, CheckOutputBus) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(CarTest, CheckOutputTruck) {
+TEST_F(CarTest, CheckOutputTruck)
+{
 	ofstream ofst("OutTest.txt");
 
 	truck* t = new truck;
@@ -262,7 +278,8 @@ TEST_F(CarTest, CheckOutputTruck) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(CarTest, CheckOutputPassengerCar) {
+TEST_F(CarTest, CheckOutputPassengerCar) 
+{
 	ofstream ofst("OutTest.txt");
 
 	passengercar* p = new passengercar;
@@ -280,7 +297,8 @@ TEST_F(CarTest, CheckOutputPassengerCar) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(CarTest, CheckCompare) {
+TEST_F(CarTest, CheckCompare) 
+{
 	bus* b1 = new bus;
 	b1->k = bus::key::BUS;
 	b1->enginepower = 1;
@@ -309,7 +327,8 @@ void OutOnlyPassengerCar(container* &cont, ofstream &outFile);
 class ContainerTest : public ::testing::Test {
 };
 
-TEST_F(ContainerTest, CheckInitContainer) {
+TEST_F(ContainerTest, CheckInitContainer) 
+{
 
 	container *c;
 	c = Init();
@@ -320,7 +339,8 @@ TEST_F(ContainerTest, CheckInitContainer) {
 	ASSERT_TRUE(c->prev == NULL);
 }
 
-TEST_F(ContainerTest, CheckClearEmptyContainer) {
+TEST_F(ContainerTest, CheckClearEmptyContainer) 
+{
 
 	container *c;
 	c = Init();
@@ -333,7 +353,8 @@ TEST_F(ContainerTest, CheckClearEmptyContainer) {
 	ASSERT_TRUE(c->prev == NULL);
 }
 
-TEST_F(ContainerTest, CheckClearContainer) {
+TEST_F(ContainerTest, CheckClearContainer) 
+{
 	container *c;
 	c = Init();
 
@@ -355,7 +376,8 @@ TEST_F(ContainerTest, CheckClearContainer) {
 	ASSERT_TRUE(c->prev == NULL);
 }
 
-TEST_F(ContainerTest, CheckOutBus) {
+TEST_F(ContainerTest, CheckOutBus)
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;
@@ -428,7 +450,8 @@ TEST_F(ContainerTest, CheckOutBus) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(ContainerTest, CheckOutTruck) {
+TEST_F(ContainerTest, CheckOutTruck)
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;
@@ -501,7 +524,8 @@ TEST_F(ContainerTest, CheckOutTruck) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(ContainerTest, CheckOutPassengerCar) {
+TEST_F(ContainerTest, CheckOutPassengerCar) 
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;
@@ -574,7 +598,8 @@ TEST_F(ContainerTest, CheckOutPassengerCar) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(ContainerTest, CheckSort) {
+TEST_F(ContainerTest, CheckSort) 
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;
@@ -648,7 +673,8 @@ TEST_F(ContainerTest, CheckSort) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(ContainerTest, CheckSortEmpty) {
+TEST_F(ContainerTest, CheckSortEmpty)
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;
@@ -664,7 +690,8 @@ TEST_F(ContainerTest, CheckSortEmpty) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(ContainerTest, CheckSortEqual) {
+TEST_F(ContainerTest, CheckSortEqual) 
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;
@@ -721,7 +748,8 @@ TEST_F(ContainerTest, CheckSortEqual) {
 	ASSERT_TRUE(flag);
 }
 
-TEST_F(ContainerTest, CheckOut) {
+TEST_F(ContainerTest, CheckOut)
+{
 	ofstream ofst("OutTest.txt");
 
 	container *c;

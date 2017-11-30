@@ -9,7 +9,8 @@ using namespace std;
 void CheckInputFile(ifstream &ifst);
 void CheckWrongInput(ifstream &ifst);
 
-void InTruck(truck* &t, ifstream &ifst) {
+void InTruck(truck* &t, ifstream &ifst) 
+{
 	CheckInputFile(ifst);
 	ifst >> t->enginepower >> t->fuelconsumption >> t->carryingcapacity;
 	CheckWrongInput(ifst);

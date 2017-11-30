@@ -28,7 +28,8 @@ void OutOnlyPassengerCar(container* &cont, ofstream &outFile)
 	}
 	while (p != NULL)
 	{
-		if (p->cont->k == car::key::PASSENGERCAR) {
+		if (p->cont->k == car::key::PASSENGERCAR)
+		{
 			outFile << p->len << ": ";
 			Out(p->cont, outFile);
 			outFile << "Ñargo weight / Engine power = " << FuncCar(p->cont) << endl;
