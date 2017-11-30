@@ -9,7 +9,7 @@ using namespace std;
 
 float FuncBus(bus* &b);
 void InBus(bus* &b, ifstream &ifst);
-void OutBus(bus* &b, ofstream &ofst);
+void OutBus(bus* &b, ostream &ofst);
 
 class BusTest : public ::testing::Test {
 };
@@ -69,7 +69,7 @@ TEST_F(BusTest, CheckOutput)
 
 float FuncTruck(truck* &t);
 void InTruck(truck* &t, ifstream &ifst);
-void OutTruck(truck* &t, ofstream &ofst);
+void OutTruck(truck* &t, ostream &ofst);
 
 class TruckTest : public ::testing::Test {
 };
@@ -126,7 +126,7 @@ TEST_F(TruckTest, CheckOutput)
 
 float FuncPassengerCar(passengercar* &p);
 void InPassengercar(passengercar* &p, ifstream &ifst);
-void OutPassengercar(passengercar* &p, ofstream &ofst);
+void OutPassengercar(passengercar* &p, ostream &ofst);
 
 class PassengerCarTest : public ::testing::Test {
 };
@@ -183,7 +183,7 @@ TEST_F(PassengerCarTest, CheckOutput)
 //##########################################################################################################
 
 car* In(ifstream &ifst);
-void Out(car *a, ofstream &ofst);
+void Out(car *a, ostream &ofst);
 bool Compare(car *c1, car *c2);
 
 class CarTest : public ::testing::Test {
@@ -318,11 +318,11 @@ TEST_F(CarTest, CheckCompare)
 struct container *Init();
 void Clear(container* &cont);
 int In(container* &cont, ifstream &inFile);
-void Out(container* &cont, ofstream &outFile);
-void Sort(container* &cont, int len);
-void OutOnlyBus(container* &cont, ofstream &outFile);
-void OutOnlyTruck(container* &cont, ofstream &outFile);
-void OutOnlyPassengerCar(container* &cont, ofstream &outFile);
+void Out(container* &cont, ostream &outFile);
+void Sort(container* &cont, int len, int d);
+void OutOnlyBus(container* &cont, ostream &outFile);
+void OutOnlyTruck(container* &cont, ostream &outFile);
+void OutOnlyPassengerCar(container* &cont, ostream &outFile);
 
 class ContainerTest : public ::testing::Test {
 };
@@ -663,7 +663,7 @@ TEST_F(ContainerTest, CheckSort)
 	}
 	c = temp;
 
-	Sort(c, 3);
+	Sort(c, 3, 1);
 	Out(c, ofst);
 	ofst.close();
 
@@ -680,7 +680,7 @@ TEST_F(ContainerTest, CheckSortEmpty)
 	container *c;
 	c = Init();
 
-	Sort(c, 0);
+	Sort(c, 0, 1);
 	Out(c, ofst);
 	ofst.close();
 
@@ -738,7 +738,7 @@ TEST_F(ContainerTest, CheckSortEqual)
 	}
 	c = temp;
 
-	Sort(c, 2);
+	Sort(c, 2, 1);
 	Out(c, ofst);
 	ofst.close();
 

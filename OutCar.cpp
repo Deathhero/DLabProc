@@ -6,13 +6,13 @@
 
 using namespace std;
 
-void OutBus(bus* &b, ofstream &ofst);
-void OutTruck(truck* &t, ofstream &ofst);
-void OutPassengercar(passengercar* &p, ofstream &ofst);
+void OutBus(bus* &b, ostream &ofst);
+void OutTruck(truck* &t, ostream &ofst);
+void OutPassengercar(passengercar* &p, ostream &ofst);
 
 void CheckOutputFile(ostream &ofst);
 
-void Out(car *c, ofstream &ofst) 
+void Out(car *c, ostream &ofst) 
 {
 	CheckOutputFile(ofst);
 	truck *t;

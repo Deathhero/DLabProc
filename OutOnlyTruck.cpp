@@ -6,12 +6,12 @@
 
 using namespace std;
 
-void Out(car *a, ofstream &ofst);
+void Out(car *a, ostream &ofst);
 float FuncCar(car* &c);
 
 void CheckOutputFile(ostream &ofst);
 
-void OutOnlyTruck(container* &cont, ofstream &outFile)
+void OutOnlyTruck(container* &cont, ostream &outFile)
 {
 	CheckOutputFile(outFile);
 	int len = cont->len;

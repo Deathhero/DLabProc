@@ -8,7 +8,7 @@ using namespace std;
 
 void CheckOutputFile(ostream &ofst);
 
-void OutPassengercar(passengercar* &p, ofstream &ofst) 
+void OutPassengercar(passengercar* &p, ostream &ofst) 
 {
 	CheckOutputFile(ofst);
 	ofst << "It is passenger car." << endl;

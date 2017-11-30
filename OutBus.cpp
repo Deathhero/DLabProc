@@ -8,7 +8,7 @@ using namespace std;
 
 void CheckOutputFile(ostream &ofst);
 
-void OutBus(bus* &b, ofstream &ofst) 
+void OutBus(bus* &b, ostream &ofst) 
 {
 	CheckOutputFile(ofst);
 	ofst << "It is bus." << endl;

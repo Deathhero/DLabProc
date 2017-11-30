@@ -6,11 +6,11 @@
 
 using namespace std;
 
-void Out(car *a, ofstream &ofst);
+void Out(car *a, ostream &ofst);
 
 void CheckOutputFile(ostream &ofst);
 
-void Multimethod(container* &c, ofstream &ofst)
+void Multimethod(container* &c, ostream &ofst)
 {
 	CheckOutputFile(ofst);
 	int len = c->len;

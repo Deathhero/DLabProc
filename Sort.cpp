@@ -8,7 +8,7 @@ using namespace std;
 
 bool Compare(car *c1, car *c2);
 
-void Sort(container* &cont, int len)
+void Sort(container* &cont, int len, int d)
 {
 	container *p;
 	p = cont;
@@ -27,7 +27,19 @@ void Sort(container* &cont, int len)
 			p = p->next;
 			car *two;
 			two = p->cont;
-			bool k = Compare(one, two);
+			bool k;
+			switch (d)
+			{
+			case 0:
+				k = Compare(one, two);
+				break;
+			case 1:
+				k = !Compare(one, two);
+				break;
+			default:
+				cerr << "Inknown d in sort function!" << endl;
+				exit(1);
+			}
 			if (k == true)
 			{
 				p->cont = one;
