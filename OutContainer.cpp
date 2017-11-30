@@ -7,6 +7,7 @@
 using namespace std;
 
 void Out(car *a, ofstream &ofst);
+float FuncCar(car* &c);
 
 void Out(container* &cont, ofstream &outFile)
 {
@@ -26,6 +27,7 @@ void Out(container* &cont, ofstream &outFile)
 	{
 		outFile << p->len << ": ";
 		Out(p->cont, outFile);
+		outFile << "Ñargo weight / Engine power = " << FuncCar(p->cont) << endl;
 		p = p->next;
 	}
 }

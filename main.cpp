@@ -10,6 +10,7 @@ struct container *Init();
 void Clear(container* &cont);
 int In(container* &cont, ifstream &inFile);
 void Out(container* &cont, ofstream &outFile);
+void Sort(container* &cont, int len);
 
 int main(int argc, char* argv[]) {
 
@@ -28,6 +29,7 @@ int main(int argc, char* argv[]) {
 
 	int len = In(c, ifst);
 	ofst << "Filled container. " << endl;
+	Sort(c, len);
 	Out(c, ofst);
 
 	Clear(c);
