@@ -9,5 +9,6 @@ using namespace std;
 void InPassengercar(passengercar* &p, ifstream &ifst)
 {
 	ifst >> p->enginepower;
+	ifst >> p->fuelconsumption;
 	ifst >> p->maxspeed;
 }

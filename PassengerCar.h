@@ -9,5 +9,6 @@ struct passengercar {
 	enum key { TRUCK, BUS, PASSENGERCAR };
 	key k;
 	int enginepower;
+	float fuelconsumption;
 	short int maxspeed;
 };

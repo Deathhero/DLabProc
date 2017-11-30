@@ -13,6 +13,7 @@ void Out(container* &cont, ofstream &outFile);
 void Sort(container* &cont, int len);
 void OutOnlyBus(container* &cont, ofstream &outFile);
 void OutOnlyTruck(container* &cont, ofstream &outFile);
+void OutOnlyPassengerCar(container* &cont, ofstream &outFile);
 
 int main(int argc, char* argv[]) {
 
@@ -32,11 +33,6 @@ int main(int argc, char* argv[]) {
 	int len = In(c, ifst);
 	ofst << "Filled container. " << endl;
 	Sort(c, len);
-	Out(c, ofst);
-
-
-	Clear(c);
-	ofst << "Empty container. " << endl;
 	Out(c, ofst);
 
 	cout << "Stop" << endl;
