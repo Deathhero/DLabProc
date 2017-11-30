@@ -6,7 +6,7 @@
 using namespace std;
 
 struct car {
-	enum key { TRUCK, BUS };
+	enum key { TRUCK, BUS, PASSENGERCAR };
 	// значения ключей для каждого вида животных
 	key k; // ключ
 		   // используемые альтернативы

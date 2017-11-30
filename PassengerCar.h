@@ -5,12 +5,9 @@
 
 using namespace std;
 
-struct truck {
+struct passengercar {
 	enum key { TRUCK, BUS, PASSENGERCAR };
 	key k;
 	int enginepower;
-	int carryingcapacity;
+	short int maxspeed;
 };
-
-//void InTruck(truck* &t, ifstream &ifst);
-//void OutTruck(truck* &t, ofstream &ofst);

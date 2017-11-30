@@ -6,10 +6,10 @@
 using namespace std;
 
 struct bus {
-	enum key { TRUCK, BUS };
+	enum key { TRUCK, BUS, PASSENGERCAR };
 	key k;
 	int enginepower;
-	short int passengercapacity; // перелетные или нет
+	short int passengercapacity;
 };
 
 //void InBus(bus* &b, ifstream &ifst);
