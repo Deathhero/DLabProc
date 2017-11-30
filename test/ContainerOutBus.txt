@@ -1,0 +1,5 @@
+Container contains 3 elements.
+1: It is bus.
+Engine power = 1. Passenger capacity =  3
+Fuel consumption = 2.5
+Ñargo weight / Engine power = 225

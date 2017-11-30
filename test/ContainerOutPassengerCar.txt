@@ -1,0 +1,5 @@
+Container contains 3 elements.
+3: It is passenger car.
+Engine power = 1. Max speed =  3
+Fuel consumption = 2.5
+Ñargo weight / Engine power = 3

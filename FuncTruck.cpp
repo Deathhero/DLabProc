@@ -8,5 +8,10 @@ using namespace std;
 
 float FuncTruck(truck* &t)
 {
-	return float(t->carryingcapacity) / t->enginepower;
+	if (t->enginepower != 0)
+		return float(t->carryingcapacity) / t->enginepower;
+	else {
+		cout << "ERROR! Division by zero in func truck!" << endl;
+		return 0;
+	}
 }

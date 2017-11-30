@@ -7,6 +7,7 @@
 using namespace std;
 
 void Out(car *a, ofstream &ofst);
+float FuncCar(car* &c);
 
 void OutOnlyTruck(container* &cont, ofstream &outFile)
 {
@@ -27,6 +28,7 @@ void OutOnlyTruck(container* &cont, ofstream &outFile)
 		if (p->cont->k == car::key::TRUCK) {
 			outFile << p->len << ": ";
 			Out(p->cont, outFile);
+			outFile << "Ñargo weight / Engine power = " << FuncCar(p->cont) << endl;
 		}
 		p = p->next;
 	}

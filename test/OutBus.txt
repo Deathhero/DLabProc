@@ -1,0 +1,3 @@
+It is bus.
+Engine power = 1. Passenger capacity =  3
+Fuel consumption = 2.5
