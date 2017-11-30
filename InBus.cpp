@@ -9,5 +9,6 @@ using namespace std;
 void InBus(bus* &b, ifstream &ifst)
 {
 	ifst >> b->enginepower;
+	ifst >> b->fuelconsumption;
 	ifst >> b->passengercapacity;
 }

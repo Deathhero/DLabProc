@@ -10,6 +10,7 @@ struct bus {
 	key k;
 	int enginepower;
 	short int passengercapacity;
+	float fuelconsumption;
 };
 
 //void InBus(bus* &b, ifstream &ifst);
