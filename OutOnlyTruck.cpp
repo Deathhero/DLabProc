@@ -9,8 +9,11 @@ using namespace std;
 void Out(car *a, ofstream &ofst);
 float FuncCar(car* &c);
 
+void CheckOutputFile(ostream &ofst);
+
 void OutOnlyTruck(container* &cont, ofstream &outFile)
 {
+	CheckOutputFile(outFile);
 	int len = cont->len;
 	outFile << "Container contains " << len << " elements." << endl;
 	if (cont->len == 0)

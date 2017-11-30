@@ -6,9 +6,18 @@
 
 using namespace std;
 
+void CheckInputFile(ifstream &ifst);
+void CheckWrongInput(ifstream &ifst);
+
 void InPassengercar(passengercar* &p, ifstream &ifst)
 {
-	ifst >> p->enginepower;
-	ifst >> p->fuelconsumption;
-	ifst >> p->maxspeed;
+	CheckInputFile(ifst);
+	ifst >> p->enginepower >> p->fuelconsumption >> p->maxspeed;
+	CheckWrongInput(ifst);
+	if (p->enginepower <= 0 || p->fuelconsumption <= 0 || p->maxspeed <= 0)
+	{
+		cout << "Incorrect values in passenger car input." << endl;
+		exit(1);
+	}
+
 }

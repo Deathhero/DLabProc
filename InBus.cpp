@@ -6,9 +6,17 @@
 
 using namespace std;
 
+void CheckInputFile(ifstream &ifst);
+void CheckWrongInput(ifstream &ifst);
+
 void InBus(bus* &b, ifstream &ifst)
 {
-	ifst >> b->enginepower;
-	ifst >> b->fuelconsumption;
-	ifst >> b->passengercapacity;
+	CheckInputFile(ifst);
+	ifst >> b->enginepower >> b->fuelconsumption >> b->passengercapacity;
+	CheckWrongInput(ifst);
+	if (b->enginepower <= 0 || b->fuelconsumption <= 0 || b->passengercapacity <= 0)
+	{
+		cout << "Incorrect values in bus input." << endl;
+		exit(1);
+	}
 }

@@ -9,7 +9,14 @@ using namespace std;
 float FuncPassengerCar(passengercar* &p)
 {
 	if (p->enginepower != 0)
-		return float(p->maxspeed) / p->enginepower;
+	{
+		float k = float(p->maxspeed) / p->enginepower;
+		if (abs((k / p->enginepower) - p->maxspeed) >= 0.00001) {
+			cerr << "ERROR FUNC PASSENGER CAR OVERFLOW" << endl;
+			return 0;
+		}
+		return k;
+	}
 	else {
 		cout << "ERROR! Division by zero in func passenger car!" << endl;
 		return 0;

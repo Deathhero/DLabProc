@@ -10,7 +10,10 @@ void OutBus(bus* &b, ofstream &ofst);
 void OutTruck(truck* &t, ofstream &ofst);
 void OutPassengercar(passengercar* &p, ofstream &ofst);
 
+void CheckOutputFile(ostream &ofst);
+
 void Out(car *c, ofstream &ofst) {
+	CheckOutputFile(ofst);
 	truck *t;
 	bus *b;
 	passengercar *p;
